@@ -3,11 +3,16 @@
     "ts-node-starter": "dist/cli.js"
   },
   "bugs": {
-    "url": "https://github.com/bennycode/ts-node-starter/issues"
+    "url": "https://github.com/lei1996/rxjs-huobi-api/issues"
   },
-  "dependencies": {},
+  "dependencies": {
+    "big.js": "6.2.1",
+    "huobi-api-js": "1.0.0",
+    "rxjs": "7.5.6"
+  },
   "description": "",
   "devDependencies": {
+    "@types/big.js": "6.1.5",
     "@types/jest": "28.1.4",
     "@types/node": "18.0.0",
     "@typescript-eslint/eslint-plugin": "5.30.0",
@@ -38,15 +43,15 @@
     "dist",
     "!dist/**/*.test.*"
   ],
-  "homepage": "https://www.npmjs.com/package/ts-node-starter",
+  "homepage": "https://www.npmjs.com/package/rxjs-huobi-api",
   "keywords": [],
-  "license": "UNLICENSED",
+  "license": "MIT",
   "main": "dist/index.js",
-  "name": "ts-node-starter",
+  "name": "rxjs-huobi-api",
   "private": false,
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bennycode/ts-node-starter.git"
+    "url": "git+https://github.com/lei1996/rxjs-huobi-api.git"
   },
   "scripts": {
     "build": "tsc",
@@ -72,5 +77,5 @@
     "test:coverage": "yarn test --coverage",
     "test:types": "yarn lint:types"
   },
-  "version": "0.0.0"
+  "version": "0.0.1"
 }
