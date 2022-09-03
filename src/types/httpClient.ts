@@ -804,3 +804,40 @@ export interface SwapCrossOrderInfoResultInterface {
    */
   update_time: any;
 }
+
+export interface SwapCrossOrderDetailInterface {
+  /**
+   * 合约代码	"BTC-USDT"...
+   */
+  contract_code?: string;
+
+  /**
+   * 交易对 BTC-USDT
+   */
+  pair?: string;
+
+  /**
+   * 订单id
+   */
+  order_id: string;
+
+  /**
+   * 下单时间戳
+   */
+  created_at?: string;
+
+  /**
+   * 订单类型	1:报单 、 2:撤单 、 3:强平 、4:交割 、22:ADL减仓单
+   */
+  order_type?: 1 | 2 | 3 | 4 | 22;
+
+  /**
+   * 第几页,不填第一页
+   */
+  page_index?: string;
+
+  /**
+   * 不填默认20，不得多于50
+   */
+  page_size?: string;
+}
