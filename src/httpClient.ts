@@ -19,6 +19,7 @@ import type {
   SwapIndexResultInterface,
   SwapPriceLimitResultInterface,
   SwapCrossOrderDetailInterface,
+  SwapCrossMatchResultsInterface,
 } from './types/httpClient';
 
 import {HbApi} from 'huobi-api-js';
@@ -233,6 +234,21 @@ export class HuobiHttpClient {
     return defer(() =>
       this.client.restApi({
         path: `/linear-swap-api/v1/swap_cross_order_detail`,
+        method: 'POST',
+        body: {...info},
+      })
+    );
+  }
+
+  /**
+   * [全仓] 获取历史成交记录
+   * @param info
+   * @returns
+   */
+  fetchSwapCrossMatchResults(info: SwapCrossMatchResultsInterface): Observable<any> {
+    return defer(() =>
+      this.client.restApi({
+        path: `/linear-swap-api/v3/swap_cross_matchresults`,
         method: 'POST',
         body: {...info},
       })

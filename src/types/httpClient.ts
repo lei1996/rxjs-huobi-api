@@ -805,6 +805,9 @@ export interface SwapCrossOrderInfoResultInterface {
   update_time: any;
 }
 
+/**
+ * 【全仓】获取订单明细信息
+ */
 export interface SwapCrossOrderDetailInterface {
   /**
    * 合约代码	"BTC-USDT"...
@@ -840,4 +843,45 @@ export interface SwapCrossOrderDetailInterface {
    * 不填默认20，不得多于50
    */
   page_size?: string;
+}
+
+/**
+ * 【全仓】获取历史成交记录
+ */
+export interface SwapCrossMatchResultsInterface {
+  /**
+   * 合约代码	"BTC-USDT"...
+   */
+  contract: string;
+
+  /**
+   * 交易对 BTC-USDT
+   */
+  pair?: string;
+
+  /**
+   * 0:全部, 1:买入开多, 2:卖出开空, 3:买入平空, 4:卖出平多, 5:卖出强平, 6:买入强平, 17：买入（单向持仓）, 18：卖出（单向持仓）
+   */
+  trade_type: 0 | 1 | 2 | 3 | 4 | 5 | 6 | 17 | 18;
+
+  /**
+   * 查询开始时间, 以数据按创建时间进行查询
+   */
+  start_time?: string;
+
+  /**
+   * 查询结束时间, 以数据按创建时间进行查询
+   */
+  end_time?: string;
+
+  /**
+   * 查询方向, 方向为next时，数据按照时间正序排列返回，方向为prev时，数据按照时间倒序返回
+   * prev表示向前查询，next表示向后查询。
+   */
+  direct?: 'prev' | 'next';
+
+  /**
+   * 如果是向前(prev)查询，则赋值为上一次查询结果中得到的最小query_id ；如果是向后(next)查询，则赋值为上一次查询结果中得到的最大query_id
+   */
+  from_id?: string;
 }
