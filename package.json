@@ -6,7 +6,7 @@
     "url": "https://github.com/lei1996/rxjs-huobi-api/issues"
   },
   "dependencies": {
-    "big.js": "6.2.1",
+    "big.js": "6.2.2",
     "huobi-api-js": "1.0.0",
     "rxjs": "7.8.1"
   },
